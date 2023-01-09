@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+   border: 0px;
+   margin: 0px;
+   box-sizing: border-box;
+}
+
+:root {
+   --main-color: #277E78;
+   --second-color: #e6ba3a;
+   --main-bg: #e9e8ed;
+   --para-color: #B0AFB6;
+   --txt-white: #fff;
+}
+
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+   background: var(--main-bg);
+}
+
+body {
+   font-family: Roboto, sans-serif;
+   /* height: 3000px; */
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   padding: 30px;
+   align-items: center;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+}
+
+header .logo {
+   font-size: 30px;
+   text-transform: uppercase;
+   color: var(--main-color);
+   text-decoration: none;
+   font-weight: 500;
+   transition: all 0.3s;
+}
+
+header .logo:hover {
+   color: var(--second-color);
+}
+
+
+header nav ul {
+   display: flex;
+   list-style: none;
+   justify-content: space-around;
+   align-items: center;
+}
+
+header .fas.fa-bars {
+   color: var(--main-color);
+   font-size: 30px;
+   display: none;
+   cursor: pointer;
+}
+
+
+
+header nav ul li a {
+   font-size: 18px;
+   text-transform: uppercase;
+   color: var(--main-color);
+   text-decoration: none;
+   margin: 0px 15px;
+   font-weight: 500;
+   padding: 10px 20px;
+   transition: all 0.3s;
+   border-radius: 20px;
+}
+
+
+header nav ul li a:hover {
+   color: var(--second-color);
+   border-radius: 20px;
+}
+
+header nav ul li:last-child a {
+   background: var(--main-color);
+   color: var(--txt-white);
+   border-radius: 20px;
+}
+
+header nav ul li:last-child a:hover {
+   background: var(--second-color);
+   color: var(--txt-white);
+}
+
+
+
+
+.jumptron {
+   background: var(--main-bg);
+   display: flex;
+   width: 100vw;
+   height: calc(100vh + 75px);
+   justify-content: center;
+   align-items: center;
+   margin-top: -95px;
+   padding: 30px;
+}
+
+.jumptron .info {
+   padding: 80px;
+}
+
+.jumptron .info h1 {
+   font-size: 80px;
+   text-transform: uppercase;
+   color: var(--main-color);
+   font-weight: 600;
+}
+
+.jumptron .info h3 {
+   font-size: 40px;
+   color: var(--main-color);
+   text-transform: uppercase;
+}
+
+.jumptron .info p {
+   font-size: 22px;
+   line-height: 36px;
+   color: var(--para-color);
+   margin: 25px 0px;
+   text-transform: uppercase;
+}
+
+.jumptron .feature-img img {
+   width: 50vw;
+   border: 0px;
+}
+
+.jumptron .info button {
+   border: 0px;
+   outline: 0px;
+   font-size: 18px;
+   background: var(--main-color);
+   color: var(--txt-white);
+   border-radius: 40px;
+   padding: 15px 30px;
+   text-transform: uppercase;
+   cursor: pointer;
+   transition: all 0.3s ease 0s;
+}
+
+.jumptron .info button:hover {
+   color: var(--txt-white);
+   background: var(--second-color);
+}
+
+
+
+
+@media (max-width:920px) {
+   header nav ul {
+      display: none;
+   }
+
+   header .fas.fa-bars {
+      transition: .3s all;
+      display: block;
+   }
+
+
+   header .fas.fa-bars.active:before {
+      content: "\f00d";
+      transition: .3s all;
+      transform: rotate(90deg);
+   }
+
+   header .fas.fa-bars.active {
+      transform: rotate(180deg);
+   }
+
+   header nav ul.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background: var(--main-color);
+      text-align: left;
+      padding: 0;
+      overflow: hidden;
+   }
+
+   header nav ul.active li {
+      display: block;
+      width: 100%;
+   }
+
+   header nav ul.active li a {
+      font-size: 18px;
+      color: var(--txt-white);
+      margin: 0;
+      display: block;
+      border-bottom: 1px solid rgb(255 255 255 / 20%);
+      border-radius: 0;
+      padding: 20px;
+   }
+
+   header nav ul.active li a:hover {
+      color: var(--second-color);
+   }
+
+   header nav ul.active li:last-child a {
+      border-bottom: 0px solid #fff;
+   }
+
+   header nav ul.active li:last-child a:hover {
+      background: initial;
+   }
+
+   .jumptron {
+      flex-direction: column;
+      margin-top: 95px;
+      height: auto;
+   }
+
+   .jumptron .info {
+      order: 1;
+      padding: 80px 30px;
+   }
+
+
+   .jumptron .feature-img {
+      order: 0;
+   }
+
+   .jumptron .feature-img img {
+      width: 100vw;
+   }
+}
